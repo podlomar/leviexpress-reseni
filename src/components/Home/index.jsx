@@ -5,9 +5,13 @@ import { JourneyPicker } from '../JourneyPicker';
 export const Home = () => {
   const [journey, setJourney] = useState(null);
   
+  const handleJourneyChange = (results) => {
+    setJourney(results);
+  }
+
   return (
     <main>
-      <JourneyPicker onJourneyChange={setJourney} />
+      <JourneyPicker onJourneyChange={handleJourneyChange} />
       <div className="container">
         {
           journey === null
